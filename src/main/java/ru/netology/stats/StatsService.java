@@ -10,11 +10,7 @@ public class StatsService {
     }
 
     public long averageMonthSale(long[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
-        return sum / sales.length;
+        return this.totalSales(sales) / sales.length;
     }
 
     public int maxSalesMonth(long[] sales) {
@@ -42,11 +38,7 @@ public class StatsService {
     }
 
     public long monthsLowerAverage(long[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
-        long average = sum / sales.length;
+        long average = this.averageMonthSale(sales);
         int counter = 0;
         for (long sale : sales) {
             if (sale < average) {
@@ -57,11 +49,7 @@ public class StatsService {
     }
 
     public long monthsHigherAverage(long[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
-        long average = sum / sales.length;
+        long average = this.averageMonthSale(sales);
         int counter = 0;
         for (long sale : sales) {
             if (sale > average) {
